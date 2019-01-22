@@ -92,7 +92,7 @@ class ConfigurationConflictError(ConfigurationError):
 
     def __str__(self):
         r = ["Conflicting configuration actions"]
-        items = sorted(self._conflicts.items())
+        items = self._conflicts.items()
         for discriminator, infos in items:
             r.append("  For: %s" % (discriminator,))
             for info in infos:
